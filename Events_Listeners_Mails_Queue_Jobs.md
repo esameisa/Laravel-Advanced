@@ -97,7 +97,7 @@ php artisan migrate
 
 php artisan queue:work
 
-php artisan queue:work &
+php artisan queue:work & // to run in background
 
 php artisan queue:work > storage/logs/jobs.log &
 
