@@ -1,11 +1,5 @@
 # Events & Listeners & Mails & Queues & Jobs:
 
-## Fire event in controller
-
-```
-event(new NewUserHasRegisteredEvent($user_data));
-```
-
 ## Event
 
 ```
@@ -21,20 +15,10 @@ public function __construct($user)
 }
 ```
 
-## Listener
+## Fire event in controller
 
 ```
-php artisan make:listener WelcomeRegisterUserInCourseWithDetailsEmailListener
-```
-
-```
-class WelcomeRegisterUserInCourseWithDetailsEmailListener implements ShouldQueue
-{
-    public function handle($event)
-    {
-        Mail::to($event->user['email'])->send(new WelcomeRegisterUserInCourseWithDetailsEmail($event->user));
-    }
-}
+event(new NewUserHasRegisteredEvent($user_data));
 ```
 
 ## Mail
@@ -58,6 +42,22 @@ public function build()
     return $this->view('mails.WelcomeRegisterUserInCourseWithDetailsEmail')
         ->subject('codeKids24')
         ->with('user', $this->user);
+}
+```
+
+## Listener
+
+```
+php artisan make:listener WelcomeRegisterUserInCourseWithDetailsEmailListener
+```
+
+```
+class WelcomeRegisterUserInCourseWithDetailsEmailListener implements ShouldQueue
+{
+    public function handle($event)
+    {
+        Mail::to($event->user['email'])->send(new WelcomeRegisterUserInCourseWithDetailsEmail($event->user));
+    }
 }
 ```
 
