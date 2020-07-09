@@ -1,6 +1,4 @@
-# Laravel
-
-## Events & Listeners & Mails & Queues & Jobs:
+# Events & Listeners & Mails & Queues & Jobs:
 
 ## Fire event in controller
 
