@@ -9,7 +9,7 @@ event(new NewUserHasRegisteredEvent($user_data));
 ## Event
 
 ```
-php artisan make:event NewUserHasRegisteredEvnet
+php artisan make:event NewUserHasRegisteredEvent
 ```
 
 ```
