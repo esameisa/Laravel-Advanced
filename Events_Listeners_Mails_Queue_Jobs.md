@@ -27,9 +27,9 @@ event(new NewUserHasRegisteredEvent($user_data));
 php artisan make:mail WelcomeRegisterUserInCourseWithDetailsEmail
 ```
 
-```
-we can also add implements ShouldQueue if we need
+We can also add implements ShouldQueue if we need
 
+```
 protected $user;
 
 public function __construct($user)
