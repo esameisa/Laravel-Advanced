@@ -63,7 +63,7 @@ class WelcomeRegisterUserInCourseWithDetailsEmailListener implements ShouldQueue
 
 ## EventServiceProvider
 
-To connect Event with Listeners
+To connect Event with Listeners:
 
 ```
 protected $listen = [
@@ -74,13 +74,15 @@ protected $listen = [
 ];
 ```
 
-if we need to auto generate Listeners, create them automatics
+If we need to auto generate Listeners, create them automatics:
 
 ```
 php artisan event:generate
 ```
 
 ## .env
+
+Drivers: "sync", "database", "beanstalkd", "sqs", "redis", "null"
 
 ```
 QUEUE_CONNECTION=database
