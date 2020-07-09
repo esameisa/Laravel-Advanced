@@ -97,6 +97,8 @@ php artisan migrate
 
 php artisan queue:work
 
+php artisan queue:work &
+
 php artisan queue:work > storage/logs/jobs.log &
 
 jobs -l
