@@ -66,16 +66,18 @@ class WelcomeRegisterUserInCourseWithDetailsEmailListener implements ShouldQueue
 To connect Event with Listeners
 
 ```
-php artisan event:generate // to auto generate Listeners, create them automatics
-```
-
-```
 protected $listen = [
     NewUserHasRegisteredEvent::class => [
         \App\Listeners\WelcomeRegisterUserInCourseWithDetailsEmailListener::class,
         // \App\Listeners\NotifyAdminThatNewUserRegisteredListener::class,
     ],
 ];
+```
+
+if we need to auto generate Listeners, create them automatics
+
+```
+php artisan event:generate
 ```
 
 ## .env
