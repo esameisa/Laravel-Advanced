@@ -10,8 +10,9 @@ event(new NewUserHasRegisteredEvent($user_data));
 
 ```
 php artisan make:event NewUserHasRegisteredEvnet
+```
 
-
+```
 public $user;
 
 public function __construct($user)
@@ -24,8 +25,9 @@ public function __construct($user)
 
 ```
 php artisan make:listener WelcomeRegisterUserInCourseWithDetailsEmailListener
+```
 
-
+```
 class WelcomeRegisterUserInCourseWithDetailsEmailListener implements ShouldQueue
 {
     public function handle($event)
@@ -39,8 +41,9 @@ class WelcomeRegisterUserInCourseWithDetailsEmailListener implements ShouldQueue
 
 ```
 php artisan make:mail WelcomeRegisterUserInCourseWithDetailsEmail
+```
 
-
+```
 protected $user;
 
 public function __construct($user)
@@ -60,8 +63,9 @@ public function build()
 
 ```
 php artisan event:generate // to auto generate Listeners, create them automatics
+```
 
-
+```
 NewUserHasRegisteredEvent::class => [
     \App\Listeners\WelcomeRegisterUserInCourseWithDetailsEmailListener::class,
     // \App\Listeners\NotifyAdminThatNewUserRegisteredListener::class,
