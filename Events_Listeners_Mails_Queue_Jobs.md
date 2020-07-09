@@ -44,6 +44,8 @@ php artisan make:mail WelcomeRegisterUserInCourseWithDetailsEmail
 ```
 
 ```
+we can also add implements ShouldQueue if we need
+
 protected $user;
 
 public function __construct($user)
