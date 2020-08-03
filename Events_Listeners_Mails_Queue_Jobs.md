@@ -105,3 +105,22 @@ jobs -l
 
 KILL 19690
 ```
+
+## To run queue:work on CPanel
+
+Add this code to you App\Console\Kernel in schedule function
+
+```
+    protected function schedule(Schedule $schedule)
+    {
+        $schedule->command('queue:work --tries=3 --daemon > storage/logs/jobs.log')
+            ->everyMinute()
+            ->withoutOverlapping();
+    }
+```
+
+And run this code in Cron Jobs on CPanel every 5 min for example.
+
+```
+/usr/local/bin/php /home/connqyvr/public_html/artisan schedule:run >> /dev/null 2>&1
+```
