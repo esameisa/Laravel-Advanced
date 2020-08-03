@@ -106,7 +106,7 @@ jobs -l
 KILL 19690
 ```
 
-## To run queue:work on CPanel
+## Run queue:work on CPanel
 
 Add this code to you App\Console\Kernel in schedule function
 
