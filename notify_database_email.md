@@ -4,8 +4,6 @@
 
 ```
 php artisan make:notification initNewConnectionEmailNotification
-php artisan notifications:table // if we need to store notification in database
-php artisan migrate
 ```
 
 Call method in controller:
@@ -35,12 +33,16 @@ public function __construct($connected_user)
 }
 ```
 
+To call toMail and toDatabase functions
+
 ```
 public function via($notifiable)
 {
     return ['mail', 'database'];
 }
 ```
+
+toMail functions
 
 ```
 public function toMail($notifiable)
@@ -50,6 +52,13 @@ public function toMail($notifiable)
         ->action('Connect Now', route('website.user.profile', ['user' => $this->user->id]))
         ->line('Thank you for using our application!');
 }
+```
+
+toDatabase functions must call
+
+```
+php artisan notifications:table // if we need to store notification in database
+php artisan migrate
 ```
 
 ```
