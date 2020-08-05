@@ -33,12 +33,16 @@ public function __construct($connected_user)
 {
     $this->connected_user = $connected_user;
 }
+```
 
+```
 public function via($notifiable)
 {
     return ['mail', 'database'];
 }
+```
 
+```
 public function toMail($notifiable)
 {
     return (new MailMessage)
@@ -46,8 +50,9 @@ public function toMail($notifiable)
         ->action('Connect Now', route('website.user.profile', ['user' => $this->user->id]))
         ->line('Thank you for using our application!');
 }
+```
 
-
+```
 public function toDatabase($notifiable)
 {
     return [
